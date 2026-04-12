@@ -1,0 +1,17 @@
+<h1>{{bookmark.title}}</h1>
+{{#if bookmark.description}}
+  <p>{{bookmark.description}}</p>
+{{/if}}
+<p><a
+    href="{{bookmark.url}}"
+    target="_blank"
+    rel="noopener"
+  >{{bookmark.url}}</a></p>
+<p>Added: {{formatDate bookmark.createdAt}}</p>
+<p>
+  Tags:
+  {{#each bookmark.tags}}
+    <a href="/tag/{{this}}">{{this}}</a>
+  {{/each}}
+</p>
+<a href="/bookmarks">← Back to all bookmarks</a>

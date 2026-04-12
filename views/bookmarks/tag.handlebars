@@ -1,0 +1,13 @@
+<h1>Tag: {{tagSlug}}</h1>
+{{#if bookmarks.length}}
+  <ul>
+    {{#each bookmarks}}
+      <li>
+        <a href="/bookmarks/{{slug}}">{{title}}</a>
+        {{#if description}}<p>{{description}}</p>{{/if}}
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No bookmarks tagged "{{tagSlug}}".</p>
+{{/if}}

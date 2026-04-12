@@ -1,0 +1,14 @@
+<h1>Book It</h1>
+<h2>Recent Bookmarks</h2>
+{{#if bookmarks.length}}
+  <ul>{{#each bookmarks}}
+      <li>
+        <a href="/bookmarks/{{slug}}">{{title}}</a>
+        {{#if description}}<p>{{description}}</p>{{/if}}
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No bookmarks yet.</p>
+{{/if}}
+<a href="/bookmarks">View all</a>
