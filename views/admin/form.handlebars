@@ -1,0 +1,28 @@
+<h1>{{pageTitle}}</h1>
+{{#if errors}}
+<ul>
+    {{#each errors}}
+    <li>{{this}}</li>
+    {{/each}}
+</ul>
+{{/if}}
+<form action="/bookmarks/{{#unless isNew}}{{bookmark.slug}}/{{/unless}}{{#if isNew}}new{{else}}edit{{/if}}"
+    method="post">
+    <label>Title
+        <input type="text" name="title" value="{{bookmark.title}}" />
+    </label>
+    <label>Slug
+        <input type="text" name="slug" value="{{bookmark.slug}}" />
+    </label>
+    <label>URL
+        <input type="url" name="url" value="{{bookmark.url}}" />
+    </label>
+    <label>Description
+        <textarea name="description">{{bookmark.description}}</textarea>
+    </label>
+    <label>Tags (comma separated)
+        <input type="text" name="tags" value="{{bookmark.tags}}" />
+    </label>
+    <button type="submit">{{#if isNew}}Create{{else}}Update{{/if}}</button>
+    <a href="/bookmarks">Cancel</a>
+</form>

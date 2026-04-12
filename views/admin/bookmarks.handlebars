@@ -1,0 +1,34 @@
+<h1>Manage Bookmarks</h1>
+<a href="/bookmarks/new">+ New Bookmark</a>
+<ul>
+  {{#each bookmarks}}
+    <li>
+      <a href="/bookmarks/{{slug}}/edit">{{title}}</a>
+      {{#if isArchived}}<em>(archived)</em>{{/if}}
+      <form
+        action="/bookmarks/{{slug}}/archive"
+        method="post"
+        style="display:inline"
+      >
+        {{#unless isArchived}}<button type="submit">Archive</button>{{/unless}}
+      </form>
+      <form
+        action="/bookmarks/{{slug}}/unarchive"
+        method="post"
+        style="display:inline"
+      >
+        {{#if isArchived}}<button type="submit">Unarchive</button>{{/if}}
+      </form>
+      <form
+        action="/bookmarks/{{slug}}/delete"
+        method="post"
+        style="display:inline"
+      >
+        <button
+          type="submit"
+          onclick="return confirm('Delete?')"
+        >Delete</button>
+      </form>
+    </li>
+  {{/each}}
+</ul>

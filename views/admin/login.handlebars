@@ -1,0 +1,17 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login – Book It</title>
+  </head>
+  <body>
+    <h1>Book It Admin</h1>
+    {{#if error}}
+      <p>{{error}}</p>
+    {{/if}}
+    <form action="/login" method="post">
+      <label>Username <input type="text" name="username" /></label>
+      <label>Password <input type="password" name="password" /></label>
+      <button type="submit">Login</button>
+    </form>
+  </body>
+</html>

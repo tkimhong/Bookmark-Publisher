@@ -1,0 +1,16 @@
+<h1>Dashboard</h1>
+<ul>
+  <li>Total: {{stats.total}}</li>
+  <li>Active: {{stats.active}}</li>
+  <li>Archived: {{stats.archived}}</li>
+  <li>Tags: {{stats.totalTags}}</li>
+</ul>
+<h2>Recent</h2>
+<ul>
+  {{#each recent}}
+    <li>
+      <a href="/bookmarks/{{slug}}/edit">{{title}}</a>
+      {{#if isArchived}}<em>(archived)</em>{{/if}}
+    </li>
+  {{/each}}
+</ul>
