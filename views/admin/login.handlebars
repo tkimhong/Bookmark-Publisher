@@ -2,16 +2,21 @@
   <head>
     <meta charset="UTF-8" />
     <title>Login – Book It</title>
+    <link rel="stylesheet" href="/css/index.css" />
   </head>
   <body>
-    <h1>Book It Admin</h1>
-    {{#if error}}
-      <p>{{error}}</p>
-    {{/if}}
-    <form action="/login" method="post">
-      <label>Username <input type="text" name="username" /></label>
-      <label>Password <input type="password" name="password" /></label>
-      <button type="submit">Login</button>
-    </form>
+    <div class="login-page">
+      <div class="login-box">
+        <h1>Book It</h1>
+        {{#if error}}
+          <p class="error-msg">{{error}}</p>
+        {{/if}}
+        <form action="/login" method="post">
+          <label>Username <input type="text" name="username" /></label>
+          <label>Password <input type="password" name="password" /></label>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

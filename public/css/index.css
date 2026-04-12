@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+
+:root {
+  --cyan-main: rgb(0, 224, 254);
+  --cyan-dark: rgb(0, 202, 229);
+  --cyan-light: rgb(51, 231, 255);
+
+  --navy-main: rgb(23, 30, 44);
+  --navy-dark: rgb(14, 19, 27);
+  --navy-light: rgb(31, 42, 61);
+
+  --text-primary: rgb(250, 250, 250);
+  --text-muted: rgb(208, 208, 208);
+  --text-dark: var(--navy-main);
+
+  --red: rgb(220, 38, 38);
+  --green: rgb(132, 204, 22);
+  --orange: rgb(255, 106, 0);
+  --amber: rgb(245, 158, 11);
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--navy-dark);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--cyan-main);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--cyan-light);
+  text-decoration: underline;
+}
+
+/* Layout */
+main {
+  flex: 1;
+  max-width: 900px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+/* Nav */
+nav {
+  background-color: var(--navy-main);
+  border-bottom: 2px solid var(--cyan-dark);
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+nav a {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+nav a:first-child {
+  font-size: 1.1rem;
+  color: var(--cyan-main);
+  margin-right: auto;
+}
+
+nav form {
+  margin-left: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--navy-main);
+  border-top: 1px solid var(--navy-light);
+  text-align: center;
+  padding: 1rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Headings */
+h1 {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+h2 {
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Bookmark cards */
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+li {
+  background-color: var(--navy-light);
+  border: 1px solid var(--navy-main);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+
+li a {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+li p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin-top: 0.35rem;
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.tags a,
+li p a {
+  background-color: var(--navy-dark);
+  border: 1px solid var(--cyan-dark);
+  color: var(--cyan-main);
+  font-size: 0.78rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+}
+
+.tags a:hover,
+li p a:hover {
+  background-color: var(--cyan-dark);
+  color: var(--navy-dark);
+  text-decoration: none;
+}
+
+/* Bookmark detail */
+.detail-url {
+  word-break: break-all;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin: 0.5rem 0;
+}
+
+.detail-meta {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="url"],
+input[type="password"],
+textarea {
+  background-color: var(--navy-light);
+  border: 1px solid var(--navy-main);
+  color: var(--text-primary);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  width: 100%;
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--cyan-dark);
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Buttons */
+button,
+.btn {
+  cursor: pointer;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.45rem 1rem;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+
+button[type="submit"],
+.btn-primary {
+  background-color: var(--cyan-dark);
+  color: var(--navy-dark);
+  border-color: var(--cyan-dark);
+}
+
+button[type="submit"]:hover,
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--cyan-main);
+  border-color: var(--cyan-main);
+}
+
+.btn-danger {
+  background-color: var(--red);
+  color: var(--text-primary);
+  border-color: var(--red);
+}
+
+.btn-danger:hover {
+  background-color: transparent;
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.btn-caution {
+  background-color: var(--orange);
+  color: var(--text-primary);
+  border-color: var(--orange);
+}
+
+.btn-caution:hover {
+  background-color: transparent;
+  color: var(--orange);
+  border-color: var(--orange);
+}
+
+.btn-neutral {
+  background-color: var(--navy-light);
+  color: var(--text-primary);
+  border-color: var(--navy-light);
+}
+
+.btn-neutral:hover {
+  background-color: transparent;
+  border-color: var(--cyan-dark);
+  color: var(--cyan-main);
+}
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 560px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Errors */
+.errors {
+  background-color: rgba(220, 38, 38, 0.15);
+  border: 1px solid var(--red);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  color: rgb(248, 113, 113);
+  font-size: 0.9rem;
+}
+
+.errors li {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.archived-badge {
+  font-size: 0.75rem;
+  color: var(--amber);
+  border: 1px solid var(--amber);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  margin-left: 0.5rem;
+}
+
+/* 404 */
+.not-found {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.not-found h1 {
+  font-size: 3rem;
+  color: var(--cyan-main);
+}
+
+.not-found p {
+  color: var(--text-muted);
+  margin: 1rem 0;
+}
+
+/* Login */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--navy-dark);
+}
+
+.login-box {
+  background-color: var(--navy-main);
+  border: 2px solid var(--cyan-dark);
+  border-radius: 12px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-box h1 {
+  font-family: 'Manrope', system-ui, sans-serif;
+  color: var(--cyan-main);
+  margin-bottom: 1.5rem;
+}
+
+.error-msg {
+  color: rgb(248, 113, 113);
+  font-size: 0.88rem;
+  margin-bottom: 0.5rem;
+}
