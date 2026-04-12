@@ -6,7 +6,7 @@ const router = express.Router();
 const logger = require("../middleware/logger");
 const validateSlug = require("../middleware/validateSlug");
 const autoRender = require("../middleware/autoRender");
-const publicController = require("../middleware/public.controller");
+const publicController = require("../controllers/public.controller");
 
 router.use(logger);
 
