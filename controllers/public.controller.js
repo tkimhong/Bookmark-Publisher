@@ -3,7 +3,11 @@
 const { bookmarks } = require("../data/mock");
 
 exports.home = (request, response) => {
-  const recent = bookmarks.filter((b) => !b.isArchived).slice(0, 3);
+  // const recent = bookmarks.filter((b) => !b.isArchived).slice(0, 3);
+  const recent = bookmarks
+    .filter((b) => !b.isArchived)
+    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+    .slice(0, 3);
 
   response.render("index", {
     pageTitle: "Book It",

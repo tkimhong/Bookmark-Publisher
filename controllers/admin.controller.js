@@ -52,7 +52,10 @@ exports.dashboard = (request, response) => {
   response.render("admin/dashboard", {
     pageTitle: "Dashboard",
     stats: { total, active, archived, totalTags: tags.length },
-    recent: bookmarks.slice(0, 5),
+    // recent: bookmarks.slice(0, 5),
+    recent: [...bookmarks]
+      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+      .slice(0, 5),
   });
 };
 
