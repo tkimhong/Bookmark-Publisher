@@ -74,7 +74,7 @@ exports.showNew = (request, response) => {
 };
 
 exports.create = (request, response) => {
-  const { title, slug, url, description, tags } = req.body;
+  const { title, slug, url, description, tags } = request.body;
 
   const errors = [];
   if (!title || !title.trim()) errors.push("Title is required.");
@@ -89,7 +89,7 @@ exports.create = (request, response) => {
     return response.status(400).render("admin/form", {
       pageTitle: "New Bookmark",
       isNew: true,
-      bookmark: req.body,
+      bookmark: request.body,
       errors,
     });
   }
@@ -199,13 +199,13 @@ exports.archive = (request, response) => {
   return response.redirect("/bookmarks");
 };
 
-exports.unarchive = (req, res) => {
-  const bookmark = bookmarks.find((b) => b.slug === req.params.slug);
+exports.unarchive = (request, response) => {
+  const bookmark = bookmarks.find((b) => b.slug === request.params.slug);
 
   if (bookmark) {
     bookmark.isArchived = false;
     bookmark.updatedAt = new Date().toISOString();
   }
 
-  return res.redirect("/bookmarks");
+  return response.redirect("/bookmarks");
 };

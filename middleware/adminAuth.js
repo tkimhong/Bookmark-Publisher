@@ -1,5 +1,7 @@
 "use strict";
 
+const { adminUsers } = require("../data/mock");
+
 function adminAuth(request, response, next) {
   const username = request.cookies?.admin_user;
   const user = adminUsers.find((u) => u.username === username);
