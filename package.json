@@ -1,0 +1,32 @@
+{
+  "name": "bookmark-manager",
+  "version": "0.0.1",
+  "description": "",
+  "homepage": "https://github.com/tkimhong/Bookmark-Manager#readme",
+  "bugs": {
+    "url": "https://github.com/tkimhong/Bookmark-Manager/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tkimhong/Bookmark-Manager.git"
+  },
+  "license": "MIT",
+  "author": "Tiangkimhong Hoeu",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.4.1",
+    "express": "^5.2.1",
+    "express-handlebars": "^9.0.1",
+    "vhost": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
