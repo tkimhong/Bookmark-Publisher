@@ -44,7 +44,11 @@ exports.showTag = (request, response) => {
     (b) => !b.isArchived && b.tags.includes(tagSlug),
   );
 
-  response.render("bookmarks/tag", { pageTitle: `Tag:${tagSlug}`, tagSlug });
+  response.render("bookmarks/tag", {
+    pageTitle: `Tag:${tagSlug}`,
+    tagSlug,
+    bookmarks: filtered,
+  });
 };
 
 exports.search = (request, response) => {
@@ -62,7 +66,7 @@ exports.search = (request, response) => {
   });
 };
 
-exports.notFound = (req, res) => {
+exports.notFound = (request, response) => {
   response.status(404).render("404", {
     pageTitle: "404 - Page Not Found",
     message: "The page you are looking for does not exist.",
